@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIC - Your Medical Identity Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://i.ibb.co/qYZnzR2b/Final-MIC-Logo.png" alt="MIC Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="openAppointmentForm()">Add New Appointment</a></li>
+                <li><a href="#">Drugs & Supplements</a></li>
+                <li><a href="#">Well-Being</a></li>
+                <li><a href="#">Symptom Checker</a></li>
+                <li><a href="#">Find a Doctor</a></li>
+                <li><a href="#">More <i class="fas fa-chevron-down"></i></a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <button class="subscribe">Subscribe</button>
+            <button class="login-btn" onclick="openLoginModal()">Log In</button>
+            <button class="signup-btn" onclick="openSignupModal()">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Top Stories Section -->
+    <section class="top-stories">
+        <h2>Seamless Medical History, Anytime, Anywhere.</h2>
+        <div class="story-container">
+            <div class="main-story">
+                <img src="https://i.ibb.co/KzpTjhMM/MIC-Main-img.webp" alt="Main Story Image">
+                <div class="story-content">
+                    <h3>Secure Your Medical Records with MIC</h3>
+                    <p>MIC helps you securely store and access your medical history with ease. Learn how our platform ensures your health data is always available when you need it.</p>
+                </div>
+            </div>
+            <div class="sub-stories">
+                <div class="sub-story">
+                    <img src="https://i.ibb.co/XRmjFj7/Story1-img.png" alt="Story 1">
+                    <p>How MIC Protects Your Health Information</p>
+                </div>
+                <div class="sub-story">
+                    <img src="https://i.ibb.co/Zp2k6Vxf/Story2-img.png" alt="Story 2">
+                    <p>Why Medical Data Organisation is Essential</p>
+                </div>
+                <div class="sub-story">
+                    <img src="https://i.ibb.co/qYZnzR2b/Final-MIC-Logo.png" alt="Story 3">
+                    <p>Why should you use MIC </p>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <section class="medical-categories">
+        <h2 class="section-title">Categories</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="https://i.ibb.co/xKfHCFN0/img1.jpg" alt="Medical Appointment History">
+                <div class="card-content">
+                    <h3>Medical Appointment History</h3>
+                    <button class="card-btn" onclick="openBlankDocument()">View More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.ibb.co/LhZpfSvX/img2.jpg" alt="Medical Insurance">
+                <div class="card-content">
+                    <h3>Medical Insurance</h3>
+                    <button class="card-btn">View More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.ibb.co/pvDpm2FK/img3.jpg" alt="My Medical Documents">
+                <div class="card-content">
+                    <h3>My Medical Documents</h3>
+                    <button class="card-btn" onclick="openMedicalDocuments()">View More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.ibb.co/G37JJQ46/img4.jpg" alt="Medi Share">
+                <div class="card-content">
+                    <h3>Medi Share</h3>
+                    <button class="card-btn">View More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Topics Section -->
+    <section class="trending-topics">
+        <h2 class="section-title">TRENDING TOPICS</h2>
+        <div class="topics-container">
+            <button class="topic-btn" data-topic="Chronic Pain">Chronic Pain</button>
+            <button class="topic-btn" data-topic="Cough">Cough</button>
+            <button class="topic-btn" data-topic="Digestive Problems">Digestive Problems</button>
+            <button class="topic-btn" data-topic="Eye Health">Eye Health</button>
+            <button class="topic-btn" data-topic="Irritable Bowel Syndrome (IBS)">Irritable Bowel Syndrome (IBS)</button>
+            <button class="topic-btn" data-topic="Lung Cancer">Lung Cancer</button>
+            <button class="topic-btn" data-topic="Nutrition And Healthy Eating">Nutrition And Healthy Eating</button>
+            <button class="topic-btn" data-topic="Pain Management">Pain Management</button>
+            <button class="topic-btn" data-topic="Skin Problems And Treatments">Skin Problems And Treatments</button>
+            <button class="topic-btn" data-topic="Vitamins And Supplements">Vitamins And Supplements</button>
+        </div>
+    </section>
+
+    <!-- Modal for Topic Details -->
+    <div id="topicModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTopicModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Sign Up</h2>
+            <input type="email" id="signup-email" placeholder="Email">
+            <input type="password" id="signup-password" placeholder="Password">
+            <button onclick="signup()">Sign Up</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
